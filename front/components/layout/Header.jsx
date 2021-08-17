@@ -17,13 +17,14 @@ const HeaderContainer = Styled.div`
 `;
 
 const Gnb = Styled.ul`
-    //모바일
+    //미디어쿼리 PC내용들
     display:flex;
+    
     flex-direction:row;
     & > li {
-        margin-left:20px;
+      margin-left:20px;
     }
-    //미디어쿼리 PC내용들
+    //모바일
     @media only screen and (max-width:768px) {
         display:none;    
     }
@@ -32,7 +33,6 @@ const Gnb = Styled.ul`
 const Header = () => {
   const globalStore = useContext(Store);
   const { IsLogin } = globalStore.state;
-  console.log(IsLogin);
 
   return (
     <HeaderContainer>
