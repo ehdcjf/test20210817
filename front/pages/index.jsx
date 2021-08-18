@@ -55,7 +55,12 @@ const Index = () => {
 
 
   return (
-    <>
+    <div style={{
+      background: '#ececec',
+      padding: '25px 0',
+      width: '60%',
+      margin: '0 auto',
+    }}>
       <Head>
         <title>Blog</title>
       </Head>
@@ -138,7 +143,7 @@ const Index = () => {
         
         </StyledContainer>
       </BlogLayout>
-    </>
+    </div>
   );
 };
 
@@ -152,12 +157,7 @@ const Title = styled(JustDiv)`
   text-align: center;
 `;
 
-const ContentContainer = styled.div`
-  background: #ececec;
-  padding: 25px 0;
-  width: 60%;
-  margin: 0 auto;
-`;
+
 
 const InputContainer = styled.div``;
 
