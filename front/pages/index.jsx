@@ -65,6 +65,7 @@ const Index = () => {
         </Link>
 
         <StyledContainer>
+          <ContentContainer>
           <div ref={ref}
            style={{
             margin: '0 auto',
@@ -76,51 +77,118 @@ const Index = () => {
             width: `${width.value}px`,
             height: `${height.value}px`,
             background: background,
+        
           }}>
            
 
               <p style={{
                 margin: 'auto auto',
                 fontSize:`${fontSize.value}px`,
+                color: `${fontColor}`,
               }}>{text.value}
               </p>
            
-              </div>
+          </div>
+          </ContentContainer>
          
 
        
-        <div>
-          가로 <input type="number" {...width} />
-        </div>
-        <div>
-        세로 <input type="number" {...height} />
-        </div>
-        <ChromePicker 
-          color={background}
-          onChangeComplete={handleChangeBackground} />
+        <Container>
+        <JustDiv>
+          <Title>배경 설정</Title>
+          <InputContainer>
+          <JustSpan>
+            가로 <Input type="number" {...width} />
+          </JustSpan>
+          </InputContainer>
+          <JustSpan>
+          세로 <Input type="number" {...height} />
+          </JustSpan>
+          <ChromePic 
+            color={background}
+            onChangeComplete={handleChangeBackground}
+            />
+
+        </JustDiv>
+        
        
         
-       
-
-        <div>
-          내용 <input type="text" {...text} />
-        </div>
-
-        <div>
-        글자크기 <input type="number" {...fontSize} />
-        </div>
         
-        
-        <ChromePicker 
+        <JustDiv>
+        <InputContainer>
+          <Title>글자 설정</Title>
+          <JustSpan>
+            내용 <Input type="text" {...text} />
+          </JustSpan>
+          </InputContainer>
+          
+          <JustSpan>
+          글자크기 <Input type="number" {...fontSize} />
+          </JustSpan>
+          
+          <ChromePic 
           color={fontColor}
           onChangeComplete={handleChangeColor}
         />
    
 
-          <button onClick={onButtonClick}>Click me</button>
+          <button onClick={onButtonClick}>Download</button>
+        </JustDiv>
+        </Container>
+        
         </StyledContainer>
       </BlogLayout>
     </>
   );
 };
+
+
+const JustDiv = styled.div`
+  width: 225px;
+  margin: 0 auto;
+`;
+
+const Title = styled(JustDiv)`
+  text-align: center;
+`;
+
+const ContentContainer = styled.div`
+  background: #ececec;
+  padding: 25px 0;
+  width: 60%;
+  margin: 0 auto;
+`;
+
+const InputContainer = styled.div``;
+
+const JustSpan = styled.span`
+  position: relative;
+  padding: 0 11px;
+  color: rgba(0,0,0,.65);
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  background-color: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  transition: all .3s;
+`;
+
+const ChromePic = styled(ChromePicker)``;
+
+const Container = styled.div`
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+`;
+
+
+const Input = styled.input`
+float: left;
+width: 100%;
+margin-bottom: 0;
+text-align: inherit;
+
+`;
+
 export default Index;
