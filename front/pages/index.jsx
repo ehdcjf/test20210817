@@ -8,7 +8,7 @@ import useInput from "../hooks/useInput";
 import { ChromePicker } from 'react-color'
 
 const StyledContainer = styled.div`
-  width: 80vw;
+  width: 100%;
   height: auto;
   overflow: hidden;
   margin: 0 auto;
@@ -56,9 +56,9 @@ const Index = () => {
 
   return (
     <div style={{
-      background: '#ececec',
+      background: '#262E3D',
       padding: '25px 0',
-      width: '60%',
+      width: '80%',
       margin: '0 auto',
     }}>
       <Head>
@@ -66,11 +66,15 @@ const Index = () => {
       </Head>
       <BlogLayout>
         <Link href="/request">
-          <a>해줘</a>
+          <a style={{
+            float: 'right', width:'100px',height:'30px', border:'1px solid #ececec'
+            , lineHeight: '30px', textAlign:'center', margin: '6px 6% 6px 0', background: '#ddd',
+            borderRadius: '6px',
+          }}>해줘</a>
         </Link>
 
         <StyledContainer>
-          <ContentContainer>
+    
           <div ref={ref}
            style={{
             margin: '0 auto',
@@ -94,14 +98,14 @@ const Index = () => {
               </p>
            
           </div>
-          </ContentContainer>
+    
          
 
        
         <Container>
         <JustDiv>
-          <Title>배경 설정</Title>
           <InputContainer>
+          <Title>배경 설정</Title>
           <JustSpan>
             가로 <Input type="number" {...width} />
           </JustSpan>
@@ -137,7 +141,11 @@ const Index = () => {
         />
    
 
-          <button onClick={onButtonClick}>Download</button>
+          <button onClick={onButtonClick} style={{
+             width:'100px',height:'30px', border:'1px solid #ececec'
+            , lineHeight: '30px', textAlign:'center', marginTop: '10px', background: '#ddd',
+            borderRadius: '6px',
+          }}>Download</button>
         </JustDiv>
         </Container>
         
@@ -155,11 +163,14 @@ const JustDiv = styled.div`
 
 const Title = styled(JustDiv)`
   text-align: center;
+  color: #ccc;
 `;
 
 
 
-const InputContainer = styled.div``;
+const InputContainer = styled.div`
+  margin-top: 20px;
+`;
 
 const JustSpan = styled.span`
   position: relative;
