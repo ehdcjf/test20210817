@@ -15,7 +15,7 @@ const BlogLayout = ({ children }) => {
       <StyledWrap>
         <Header />
         <div className="container">{children}</div>
-        <div className="footer">copyright &copy; all reserved</div>
+        <div className="footer" style={{color: '#999'}}>copyright &copy; all reserved</div>
       </StyledWrap>
     </>
   );

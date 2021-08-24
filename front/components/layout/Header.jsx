@@ -14,6 +14,7 @@ const HeaderContainer = Styled.div`
     box-sizing:border-box;
     border-bottom:1px solid #ddd;
     width:100vw;
+    color: #ddd;
 `;
 
 const Gnb = Styled.ul`
@@ -41,24 +42,24 @@ const Header = () => {
       <Gnb>
         <li>
           <Link href="/">
-            <a>HOME</a>
+            <a style={{color: '#ddd'}}>HOME</a>
           </Link>
         </li>
         <li>
           <Link href="/posts/post">
-            <a>글쓰기</a>
+            <a style={{color: '#ddd'}}>글쓰기</a>
           </Link>
         </li>
         {IsLogin === false ? (
           <>
             <li>
               <Link href="/user/login">
-                <a>로그인</a>
+                <a style={{color: '#ddd'}}>로그인</a>
               </Link>
             </li>
             <li>
               <Link href="/user/join">
-                <a>회원가입</a>
+                <a style={{color: '#ddd'}}>회원가입</a>
               </Link>
             </li>
           </>
